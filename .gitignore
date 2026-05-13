@@ -1,0 +1,30 @@
+# Directories to ignore (Everything except Kaggle)
+computer-vision/
+data-analysis-and-eda/
+deep-learning/
+machine-learning/
+paper-implementations/
+utils/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
