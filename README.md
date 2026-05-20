@@ -6,25 +6,32 @@ This repository contains various technical studies and implementations in the fi
 
 ```text
 .
-├── computer-vision
-├── data-analysis-and-eda
-├── deep-learning
-├── kaggle
-├── machine-learning
-├── paper-implementations
-├── utils
+├── machine-learning/             # Tracked - Classical Machine Learning Studies
+│   ├── projects/                 # End-to-end practical ML projects
+│   ├── training-models/          # Model training theory & implementations
+│   │   ├── gradient-descent/     # Batch, SGD, Mini-batch optimizations
+│   │   ├── learning-curve/       # Overfitting, underfitting, bias-variance
+│   │   ├── linearRegression/     # Linear Regression & Normal Equation
+│   │   ├── logisticRegression/   # Binary and multiclass classification
+│   │   ├── polynomialRegression/ # Non-linear regression models
+│   │   └── regularizedLinearModels/ # Ridge, Lasso, Elastic Net, Early Stopping
+│   └── README.md
+├── computer-vision/              # Local (Git Ignored)
+├── data-analysis-and-eda/        # Local (Git Ignored)
+├── deep-learning/                # Local (Git Ignored)
+├── paper-implementations/        # Local (Git Ignored)
+├── utils/                        # Local (Git Ignored)
 └── README.md
 ```
 
 ## Content Overview
 
-- **data-analysis-and-eda**: Data manipulation, statistical analysis, and exploratory data analysis.
-- **machine-learning**: Implementation of classical machine learning algorithms and evaluation metrics.
-- **deep-learning**: Modern neural network architectures including CNNs and Transformers.
-- **computer-vision**: Image processing and object detection projects.
-- **paper-implementations**: From-scratch implementations of landmark AI research papers.
-- **kaggle**: Strategies and solutions for Kaggle competitions.
-- **utils**: Reusable helper functions and utility modules.
+- **machine-learning**: Detailed, step-by-step implementation of classical machine learning algorithms, model training mechanics, evaluation metrics, and end-to-end projects.
+- **data-analysis-and-eda** *(Local)*: Data manipulation, statistical analysis, and exploratory data analysis.
+- **deep-learning** *(Local)*: Modern neural network architectures including CNNs and Transformers.
+- **computer-vision** *(Local)*: Image processing and object detection projects.
+- **paper-implementations** *(Local)*: From-scratch implementations of landmark AI research papers.
+- **utils** *(Local)*: Reusable helper functions and utility modules.
 
 ## Technical Stack
 

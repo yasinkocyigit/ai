@@ -1,13 +1,9 @@
-# Directories to ignore (Everything except Kaggle)
+# Directories to ignore (Everything except Machine Learning)
 computer-vision/
 data-analysis-and-eda/
 deep-learning/
 paper-implementations/
 utils/
-
-# Kaggle Competitions (Ignore everything except titanic)
-kaggle/competitions/*
-!kaggle/competitions/titanic/
 
 # Python
 __pycache__/
@@ -33,5 +29,4 @@ venv/
 Thumbs.db
 *.pdf
 .vscode/
-*.pdf
-.vscode/
+
