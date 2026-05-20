@@ -2,9 +2,12 @@
 computer-vision/
 data-analysis-and-eda/
 deep-learning/
-machine-learning/
 paper-implementations/
 utils/
+
+# Kaggle Competitions (Ignore everything except titanic)
+kaggle/competitions/*
+!kaggle/competitions/titanic/
 
 # Python
 __pycache__/
@@ -28,3 +31,7 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+*.pdf
+.vscode/
+*.pdf
+.vscode/

@@ -1,4 +1,4 @@
-# Kaggle Ecosystem
+# Kaggle
 
 A comprehensive collection of strategies, solutions, and workflows developed for data science competitions on the Kaggle platform.
 
