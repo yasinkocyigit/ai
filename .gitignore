@@ -30,3 +30,17 @@ Thumbs.db
 *.pdf
 .vscode/
 
+# Ignore adimlar.txt except the one in housing-prices, then ignore project files under housing-prices that should not be tracked
+adimlar.txt
+!machine-learning/projects/housing-prices/adimlar.txt
+machine-learning/projects/*
+!machine-learning/projects/housing-prices/
+!machine-learning/projects/housing-prices/**
+!machine-learning/projects/titanic/
+!machine-learning/projects/titanic/**
+machine-learning/projects/housing-prices/requirements.txt
+machine-learning/projects/housing-prices/notebooks/
+
+# Ignore Python virtual environments and cache in tracked project folders
+**/.venv/
+**/__pycache__/

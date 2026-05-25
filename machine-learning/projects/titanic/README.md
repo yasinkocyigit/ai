@@ -1,48 +1,62 @@
 # Titanic - Machine Learning from Disaster
 
-Bu proje, Kaggle platformunun efsanevi "Getting Started" yarismasinda yer alan Titanic yolcu verilerinin analizini ve hayatta kalma tahminlemesini kapsamaktadir.
+This document describes the purpose and basic workflow of the Titanic passenger data project in `machine-learning/projects/titanic/`.
 
-## Tarihsel Arka Plan ve Problem Tanimi
+## Project Workflow and Steps
 
-15 Nisan 1912'de, "batmaz" olarak kabul edilen RMS Titanic, ilk seferinde bir buz dagına carparak batmistir. Gemideki 2224 yolcu ve personelden 1502'si hayatini kaybetmistir. Bu facia, hayatta kalma durumunun sadece sansa bagli olmadigini, bazi gruplarin (kadinlar, cocuklar ve ust sinif yolcular) daha yuksek kurtulma oranina sahip oldugunu gostermektedir.
+1. Data Preparation
+   - Place the raw data in `data/raw/`.
+   - Data cleaning and feature engineering steps are organized in modules under `src/`.
+   ```python
+   import pandas as pd
+   train = pd.read_csv('data/raw/train.csv')
+   ```
 
-**Hedef:** Yolcu verilerini kullanarak hangi yolcularin shipwreck'ten sag cikabilecegini tahmin eden bir model olusturmaktir.
+2. Exploratory Data Analysis (EDA)
+   - Analyze dataset structure, missing values, distributions, and correlations in `notebooks/`.
+   - EDA findings guide modeling decisions.
 
-## Veri Sozlugu (Data Dictionary)
+3. Preprocessing
+   - Cleaning, missing value handling, and feature engineering are automated with functions under `src/`.
+   ```python
+   from src.preprocessing import clean_data
+   df_cleaned = clean_data(pd.read_csv('data/raw/train.csv'))
+   ```
 
-| Degisken | Tanimi | Bilgi |
-| :--- | :--- | :--- |
-| **Survival** | Hayatta Kalma | 0 = Hayir, 1 = Evet |
-| **Pclass** | Bilet Sinifi | 1 = Ust, 2 = Orta, 3 = Alt |
-| **Sex** | Cinsiyet | Male / Female |
-| **Age** | Yas | Yil bazinda yas |
-| **SibSp** | Kardes / Es Sayisi | Titanic'teki kardes, uvey kardes, es sayisi |
-| **Parch** | Ebeveyn / Cocuk Sayisi | Titanic'teki anne, baba, cocuk, uvey cocuk sayisi |
-| **Ticket** | Bilet Numarasi | Biletin seri numarasi |
-| **Fare** | Yolcu Ucreti | Bilet fiyati |
-| **Cabin** | Kabin Numarasi | Kabin bilgisi |
-| **Embarked** | Binis Limani | C=Cherbourg, Q=Queenstown, S=Southampton |
+4. Modeling
+   - Train and evaluate different classification models in notebooks.
 
-### Degisken Notlari
+5. Prediction and Submission
+   - Save the best model predictions to the `submissions/` folder.
 
-- **Pclass:** Sosyo-ekonomik statu (SES) gostergesidir (1st = Ust, 2nd = Orta, 3rd = Alt).
-- **Age:** 1 yasindan kucukler ondalikli olarak gosterilmistir. Eger yas tahmin edilmisse xx.5 formatindadir.
-- **SibSp:** Kardes (brother, sister, stepbrother, stepsister) ve Es (husband, wife) iliskilerini kapsar. (Nisanlilar ve metresler yok sayilmistir).
-- **Parch:** Ebeveyn (mother, father) ve Cocuk (daughter, son, stepdaughter, stepson) iliskilerini kapsar. Sadece dadi ile seyahat eden cocuklar icin Parch=0 sayilmistir.
+## Folder Guidelines
 
-## Proje Dosyalari
+- `data/raw/`: Original raw data files.
+- `data/processed/`: Cleaned data ready for modeling.
+- `notebooks/`: Project analysis, EDA, and modeling notebooks.
+- `src/`: Reusable data processing and modeling helper code.
+- `submissions/`: Model prediction outputs and submission files.
 
-- **train.csv:** Modeli egitmek icin kullanilan hayatta kalma bilgisini (ground truth) iceren 891 yolculuk veri seti.
-- **test.csv:** Hayatta kalma bilgisi gizli tutulan, tahminleme yapilacak 418 yolculuk veri seti.
-- **gender_submission.csv:** Sadece kadinlarin hayatta kaldigini varsayan ornek bir submission dosyasi.
+## Environment Setup
 
-## Temel Analiz Bulgulari (EDA)
+Creating and using a virtual environment is recommended for this project:
 
-- **Cinsiyet:** Kadin yolcularin kurtulma sansi erkeklere gore cok daha yuksektir.
-- **Sinif Etkisi:** 1. sinif yolcularin kurtulma orani en yuksektir.
-- **Aile Yapisi:** 2-4 kisilik kucuk aileler en yuksek hayatta kalma basarisini sergilemistir.
-- **Ucret (Fare):** Yuksek ucret odeyenler (Ust sinif) daha oncelikli kurtarilmistir.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+```
+
+If there is a `requirements.txt` file for this project:
+
+```bash
+pip install -r requirements.txt
+```
+
+If the file is not available, you can install the following essential packages:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+```
 
 ---
-Basari metriki olarak **Accuracy** (Dogruluk yuzdesi) esas alinmaktadir.
-

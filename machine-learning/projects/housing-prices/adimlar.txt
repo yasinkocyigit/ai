@@ -1,0 +1,45 @@
+1. Veri Toplama
+
+Kaggle'dan dataset indir
+
+2. Veri Tanıma (EDA)
+
+head, info, describe
+Eksik veri tespiti
+Dağılım ve korelasyon analizi
+
+3. Veri Ön İşleme
+
+Eksik değerleri doldurma (medyan, mod, None)
+Aykırı değer tespiti ve temizleme
+Veri tipi dönüşümleri
+
+4. Feature Engineering
+
+Yeni sütunlar türetme
+Kategorik değişkenleri sayısala çevirme (encoding)
+
+5. Feature Selection
+
+Korelasyon matrisine göre sütun seçimi
+Gereksiz sütunları çıkarma
+
+6. Model Kurma
+
+Linear regression (baz model)
+Polinom regression (degree 2, 3)
+
+7. Model Eğitimi
+
+Train/test split
+Modeli fit etme
+
+8. Model Değerlendirme
+
+R², MSE, RMSE hesaplama
+Modelleri karşılaştırma
+
+9. Görselleştirme
+
+Tahmin vs gerçek değer grafikleri
+Overfitting gösterimi

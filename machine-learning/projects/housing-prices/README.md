@@ -1,51 +1,54 @@
-# Proje Basligi
+# Housing Prices
 
-Bu dosya, projenin amaci ve isleyisi hakkinda temel bilgiler sunar. Yeni projeye baslarken bu sablon uzerinden ilerleyiniz.
+This document describes the purpose and basic workflow of the housing prices prediction project in `machine-learning/projects/housing-prices/`.
 
-## Proje Akis Semasi ve Adimlar
+## Project Workflow and Steps
 
-1. Veri Hazirligi (Data Phase):
-   - Ham verileri data/ klasorune yukleyin.
+1. Data Preparation
+   - Place the raw data in `data/raw/`.
+   - Data cleaning and feature engineering steps are organized in modules under `src/`.
    ```python
-   # notebooks/ icinde veri okuma
    import pandas as pd
-   train = pd.read_csv('../data/raw/train.csv')
+   train = pd.read_csv('data/raw/train.csv')
    ```
 
-2. Kesifsel Veri Analizi (EDA Phase):
-   - notebooks/01-eda.ipynb dosyasinda veriyi inceleyin.
-   - Eksik verileri doldurma ve ozellik muhendisligi kararlarini burada alin.
+2. Exploratory Data Analysis (EDA)
+   - Analyze the dataset structure, missing values, distributions, and correlations in `notebooks/`.
+   - EDA findings guide modeling decisions.
 
-3. Otomasyon ve Scripting (Source Phase):
-   - Kararlastirilan temizleme adimlarini src/preprocessing.py icine fonksiyon olarak yazin.
+3. Preprocessing
+   - Cleaning, missing value handling, and feature engineering are automated with functions under `src/`.
    ```python
-   # src/preprocessing.py ornek yapisi:
-   def clean_data(df):
-       # Islemler...
-       return df
-   ```
-
-4. Modelleme (Modelling Phase):
-   - notebooks/02-modelling.ipynb dosyasinda src icindeki fonksiyonu cagirarak temiz veriyi elde edin ve modeli egitin.
-   ```python
-   # notebooks/02-modelling.ipynb icinde src'den fonksiyon cagirma
-   import sys
-   sys.path.append('../')
    from src.preprocessing import clean_data
-   
-   df_cleaned = clean_data(pd.read_csv('../data/raw/train.csv'))
+   df_cleaned = clean_data(pd.read_csv('data/raw/train.csv'))
    ```
 
-5. Tahmin ve Submission (Delivery Phase):
-   - Model sonuclarini submissions/ klasorune kaydedin.
+4. Modeling
+   - Train and evaluate different regression models in notebooks.
 
-## Klasör Yonergeleri
+5. Prediction and Submission
+   - Save the best model predictions to the `submissions/` folder.
 
-- data/raw/: Orjinal, hic el degmemis ham veriler.
-- data/processed/: Temizlenmis ve modele hazir hale getirilmis veriler.
-- notebooks/: Analiz ve deneme raporlari.
-- src/: Tekrar kullanilabilir yardımcı kodlar.
-- submissions/: Yarismaya gonderilen cikti dosyalari.
+## Folder Guidelines
+
+- `data/raw/`: Original raw data files.
+- `data/processed/`: Cleaned data ready for modeling.
+- `notebooks/`: Project analysis, EDA, and modeling notebooks.
+- `src/`: Reusable data processing and modeling helper code.
+- `submissions/`: Model prediction outputs and submission files.
+
+## Environment Setup
+
+Recommended steps for this project:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+The `requirements.txt` file contains the Python packages required for this project.
 
 ---
-Not: Proje boyunca dökümantasyonun güncel tutulması tavsiye edilir.
+
