@@ -44,9 +44,13 @@ Thumbs.db
 # ==============================================================================
 # 4. Machine Learning Projects / Kaggle Competitions
 # ==============================================================================
-# Let steps/notes like adimlar.txt be ignored globally, except the one in housing-prices
+# Let steps/notes like adimlar.txt and steps.txt be ignored globally
 adimlar.txt
+steps.txt
 !machine-learning/projects/housing-prices/adimlar.txt
+
+# Ignore generated analysis output files inside notebooks folders
+**/notebooks/*.csv
 
 # Ignore all projects except titanic and housing-prices
 machine-learning/projects/digit-recognizer/
