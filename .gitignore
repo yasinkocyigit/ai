@@ -1,46 +1,79 @@
-# Directories to ignore (Everything except Machine Learning)
+# ==============================================================================
+# 1. Global / Top-Level Directories (Keep only Machine Learning)
+# ==============================================================================
 computer-vision/
 data-analysis-and-eda/
 deep-learning/
 paper-implementations/
 utils/
+machine-learningPDF/
 
-# Python
+# ==============================================================================
+# 2. Python & Environments
+# ==============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
 build/
 dist/
 *.egg-info/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environments
 .env
 .venv
 venv/
+env/
 
-# OS
+# Apply environment & cache ignores globally to all subdirectories
+**/.venv/
+**/venv/
+**/env/
+**/__pycache__/
+
+# ==============================================================================
+# 3. Jupyter Notebooks & OS & IDEs
+# ==============================================================================
+.ipynb_checkpoints
+**/.ipynb_checkpoints/
 .DS_Store
 Thumbs.db
-*.pdf
 .vscode/
+.idea/
+*.pdf
 
-# Ignore adimlar.txt except the one in housing-prices, then ignore project files under housing-prices that should not be tracked
+# ==============================================================================
+# 4. Machine Learning Projects / Kaggle Competitions
+# ==============================================================================
+# Let steps/notes like adimlar.txt be ignored globally, except the one in housing-prices
 adimlar.txt
 !machine-learning/projects/housing-prices/adimlar.txt
-machine-learning/projects/*
-!machine-learning/projects/housing-prices/
-!machine-learning/projects/housing-prices/**
-!machine-learning/projects/titanic/
-!machine-learning/projects/titanic/**
-machine-learning/projects/housing-prices/requirements.txt
-machine-learning/projects/housing-prices/notebooks/
 
-# Ignore Python virtual environments and cache in tracked project folders
-**/.venv/
-**/__pycache__/
+# Ignore all projects except titanic and housing-prices
+machine-learning/projects/digit-recognizer/
+machine-learning/projects/llm-classification-finetuning/
+machine-learning/projects/natural-language-processing/
+machine-learning/projects/project-name/
+machine-learning/projects/spaceship-titanic/
+
+# For tracked projects (housing-prices & titanic), ignore heavy outputs but keep source code,
+# notebooks, configurations and raw datasets.
+
+# Ignore processed data outputs across all projects (raw datasets are tracked if under 50MB)
+**/data/processed/
+**/data/interim/
+
+# Ignore model outputs / serialized models (pickle, joblib, weights)
+**/*.pkl
+**/*.joblib
+**/*.h5
+**/*.pth
+**/*.pt
+**/*.onnx
+
+# Ignore generated plots and figures
+**/plots/
+**/figures/
+
+# Ignore generated Kaggle submissions (track sample_submission.csv if it exists)
+**/submissions/*.csv
+!**/submissions/sample_submission.csv
