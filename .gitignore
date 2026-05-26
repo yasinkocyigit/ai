@@ -1,5 +1,5 @@
 # ==============================================================================
-# 1. Global / Top-Level Directories (Keep only Machine Learning)
+# 1. Top-Level Directories to Ignore
 # ==============================================================================
 computer-vision/
 data-analysis-and-eda/
@@ -23,18 +23,14 @@ dist/
 .venv
 venv/
 env/
-
-# Apply environment & cache ignores globally to all subdirectories
 **/.venv/
 **/venv/
 **/env/
 **/__pycache__/
 
 # ==============================================================================
-# 3. Jupyter Notebooks & OS & IDEs
+# 3. OS & IDEs
 # ==============================================================================
-.ipynb_checkpoints
-**/.ipynb_checkpoints/
 .DS_Store
 Thumbs.db
 .vscode/
@@ -42,31 +38,29 @@ Thumbs.db
 *.pdf
 
 # ==============================================================================
-# 4. Machine Learning Projects / Kaggle Competitions
+# 4. Jupyter
 # ==============================================================================
-# Let steps/notes like adimlar.txt and steps.txt be ignored globally
-adimlar.txt
+.ipynb_checkpoints
+**/.ipynb_checkpoints/
+
+# ==============================================================================
+# 5. Machine Learning Projects
+# ==============================================================================
+
+# Ignore personal notes everywhere
 steps.txt
-!machine-learning/projects/housing-prices/adimlar.txt
+adimlar.txt
 
-# Ignore generated analysis output files inside notebooks folders
-**/notebooks/*.csv
-
-# Ignore all projects except titanic and housing-prices
+# Ignore these projects entirely (only titanic and housing-prices are tracked)
 machine-learning/projects/digit-recognizer/
 machine-learning/projects/llm-classification-finetuning/
 machine-learning/projects/natural-language-processing/
 machine-learning/projects/project-name/
 machine-learning/projects/spaceship-titanic/
 
-# For tracked projects (housing-prices & titanic), ignore heavy outputs but keep source code,
-# notebooks, configurations and raw datasets.
-
-# Ignore processed data outputs across all projects (raw datasets are tracked if under 50MB)
+# Ignore generated outputs in tracked projects (housing-prices & titanic)
 **/data/processed/
 **/data/interim/
-
-# Ignore model outputs / serialized models (pickle, joblib, weights)
 **/*.pkl
 **/*.joblib
 **/*.h5
@@ -74,10 +68,11 @@ machine-learning/projects/spaceship-titanic/
 **/*.pt
 **/*.onnx
 
-# Ignore generated plots and figures
+# Ignore generated plots
 **/plots/
-**/figures/
 
-# Ignore generated Kaggle submissions (track sample_submission.csv if it exists)
+# Ignore generated CSV outputs in notebooks
+**/notebooks/*.csv
+
+# Ignore Kaggle submission files
 **/submissions/*.csv
-!**/submissions/sample_submission.csv
