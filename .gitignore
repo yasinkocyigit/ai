@@ -68,8 +68,6 @@ machine-learning/projects/spaceship-titanic/
 **/*.pt
 **/*.onnx
 
-# Ignore generated plots
-**/plots/
 
 # Ignore generated CSV outputs in notebooks
 **/notebooks/*.csv
