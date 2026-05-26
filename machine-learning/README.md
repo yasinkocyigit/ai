@@ -4,7 +4,7 @@ This folder contains structured study notes on core machine learning algorithms 
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 machine-learning/
@@ -19,16 +19,16 @@ machine-learning/
 │       ├── lasso-regression.md
 │       ├── elastic-net.md
 │       └── early-stopping.md
-└── projects/              # End-to-end Kaggle competition projects
-    ├── housing-prices/    ✅ tracked
-    └── titanic/           ✅ tracked
+└── projects/           
+    ├── housing-prices/ 
+    └── titanic/       
 ```
 
 > Other folders under `projects/` are excluded from version control via `.gitignore`.
 
 ---
 
-## 📚 Training Models
+## Training Models
 
 Study notes and implementation examples organized by topic:
 
@@ -43,14 +43,14 @@ Study notes and implementation examples organized by topic:
 
 ---
 
-## 🏆 Kaggle Projects
+## Kaggle Projects
 
 ### 🏠 Housing Prices — Advanced Regression Techniques
 > Predict house sale prices using the Ames Housing dataset.
 
 **Techniques used:** Missing value imputation, feature engineering, skewness correction, Ridge / ElasticNet / HistGradientBoosting ensemble modeling, 5-fold cross-validation (RMSLE).
 
-📂 [`projects/housing-prices/`](projects/housing-prices/)
+ [`projects/housing-prices/`](projects/housing-prices/)
 
 ---
 
@@ -59,4 +59,4 @@ Study notes and implementation examples organized by topic:
 
 **Techniques used:** Exploratory data analysis, feature encoding, Random Forest with GridSearchCV hyperparameter tuning.
 
-📂 [`projects/titanic/`](projects/titanic/)
+ [`projects/titanic/`](projects/titanic/)
