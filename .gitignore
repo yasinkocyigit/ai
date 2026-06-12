@@ -1,6 +1,4 @@
-# ==============================================================================
-# 1. Top-Level Directories to Ignore
-# ==============================================================================
+# top-level directories to ignore
 computer-vision/
 data-analysis-and-eda/
 deep-learning/
@@ -8,9 +6,7 @@ paper-implementations/
 utils/
 machine-learningPDF/
 
-# ==============================================================================
-# 2. Python & Environments
-# ==============================================================================
+# python environments
 __pycache__/
 *.py[cod]
 *$py.class
@@ -28,37 +24,31 @@ env/
 **/env/
 **/__pycache__/
 
-# ==============================================================================
-# 3. OS & IDEs
-# ==============================================================================
+# OS and IDEs
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.pdf
 
-# ==============================================================================
-# 4. Jupyter
-# ==============================================================================
+# 4. jupyter
 .ipynb_checkpoints
 **/.ipynb_checkpoints/
 
-# ==============================================================================
-# 5. Machine Learning Projects
-# ==============================================================================
+# machine learning projects
 
-# Ignore personal notes everywhere
+# ignore personel notes everywhere
 steps.txt
 adimlar.txt
 
-# Ignore these projects entirely (only titanic and housing-prices are tracked)
+# ignore these projects entirely (only titanic and housing-prices are tracked)
 machine-learning/projects/digit-recognizer/
 machine-learning/projects/llm-classification-finetuning/
 machine-learning/projects/natural-language-processing/
 machine-learning/projects/project-name/
 machine-learning/projects/spaceship-titanic/
 
-# Ignore generated outputs in tracked projects (housing-prices & titanic)
+# ignore generated outputs in tracked projects (housing-prices & titanic)
 **/data/processed/
 **/data/interim/
 **/*.pkl
@@ -69,8 +59,8 @@ machine-learning/projects/spaceship-titanic/
 **/*.onnx
 
 
-# Ignore generated CSV outputs in notebooks
+# ignore generated CSV outputs in notebooks
 **/notebooks/*.csv
 
-# Ignore Kaggle submission files
+# ignore Kaggle submission files
 **/submissions/*.csv
