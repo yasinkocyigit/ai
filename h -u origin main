@@ -1,0 +1,78 @@
+[33mcommit fe4bc6577586b1590961da22ba332ccad460b651[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Fri Jun 12 19:03:01 2026 +0300
+
+    feat: add Ridge and Lasso regression implementations and guides
+    
+    - Add Jupyter notebooks explaining L1/L2 regularization theory and math.
+    - Implement Ridge Regression from scratch in Python.
+
+[33mcommit 07f902ec7c2507398ab7c0987656d6decf27b71a[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Tue May 26 04:25:55 2026 +0300
+
+    Add graphs to the housing price project
+
+[33mcommit 2c77950914963aea17d25dc19c4a4e6fa7c3052f[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Tue May 26 04:24:05 2026 +0300
+
+    chore: clean up .gitignore rules
+
+[33mcommit 14bcd40b4094fa06118aa97c3271e3e30372c8fa[m
+Author: Yasin Koçyiğit <yasnkcygt@gmail.com>
+Date:   Tue May 26 04:06:27 2026 +0300
+
+    Update README.md
+
+[33mcommit cd5df1b73b7826cfcb6fe1c17b7610be3b22df90[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Tue May 26 04:05:06 2026 +0300
+
+    update repo structure, .gitignore, and advance housing-prices project
+
+[33mcommit fe9e2d056da6e485fa5b3fb2692c39ccac04d3fb[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Tue May 26 03:55:14 2026 +0300
+
+    chore: update .gitignore and untrack non-essential kaggle projects
+    
+    - Ignore digit-recognizer, llm-classification-finetuning, natural-language-processing,
+      project-name, and spaceship-titanic project folders
+    - Remove these projects from Git tracking (git rm --cached)
+    - Keep tracking only titanic and housing-prices projects
+    - Remove steps.txt from global ignore (user-maintained file)
+
+[33mcommit c155aa49ee4e6d24651c9d9575192115557c8dcb[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Mon May 25 03:36:25 2026 +0300
+
+    update README and .gitignore for tracked ML projects
+
+[33mcommit aa08f1862275335287df14f16ab8e213026eacc3[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Thu May 21 01:40:37 2026 +0300
+
+    refactor: simplify project structure with a cleaner and more actionable layout
+    
+    - Replace the old textbook-style structure with a simpler and cleaner hierarchy
+    - Group machine learning assets under 'training-models' and 'projects'
+    - Add initial regression models, optimization, and regularization notes
+    - Remove obsolete kaggle directory and update gitignore/README
+
+[33mcommit 5ebedde51ad2d3a037d247665f15a76574167d47[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Wed May 20 23:27:43 2026 +0300
+
+    add machine-learning tracking and restructure kaggle competitions
+    - Stop ignoring  folder in gitignore
+    - Add initial ML training notebooks & study notes (Linear/Polynomial Regression & GD)
+    - Clean up unused Kaggle competition placeholders
+    - Simplify Titanic competition directory path to
+    - Configure gitignore to track only Titanic competition
+
+[33mcommit ad90bbf0ce9545ca3fb9f15cedbed6f27dd3c7fc[m
+Author: yasinkocyigit <yasnkcygt@gmail.com>
+Date:   Wed May 13 10:33:41 2026 +0300
+
+    Added the AI folder and updated its directory structure

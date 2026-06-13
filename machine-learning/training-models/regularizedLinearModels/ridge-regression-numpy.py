@@ -16,10 +16,6 @@ class RidgeRegression:
         self._mu = None
         self._sigma = None
 
-    # ------------------------------------------------------------------
-    # INTERNAL HELPER METHODS
-    # ------------------------------------------------------------------
-
     def _standardize_fit(self, X):
         """
         Compute mean and standard deviation from training data
@@ -28,7 +24,7 @@ class RidgeRegression:
         self._mu = X.mean(axis=0)
         self._sigma = X.std(axis=0)
 
-        # Prevent division by zero for constant columns
+        # prevent division by zero for constant columns
         self._sigma[self._sigma == 0] = 1
 
         return (X - self._mu) / self._sigma
@@ -40,9 +36,7 @@ class RidgeRegression:
         """
         return (X - self._mu) / self._sigma
 
-    # ------------------------------------------------------------------
-    # MAIN METHODS
-    # ------------------------------------------------------------------
+    # main
 
     def fit(self, X, y):
         """
@@ -63,23 +57,23 @@ class RidgeRegression:
 
         n, p = X.shape
 
-        # 1. Standardize features
+        # standardize features
         X_scaled = self._standardize_fit(X)
 
-        # 2. Add intercept column
+        #  add intercept column
         ones = np.ones((n, 1))
         X_b = np.hstack([ones, X_scaled])
 
-        # 3. Create regularization matrix
+        # create regularization matrix
         # Do not penalize the intercept term
         I = np.eye(p + 1)
         I[0, 0] = 0
 
-        # 4. Closed-form Ridge solution
+        # closed-form Ridge solution
         A = X_b.T @ X_b + self.lambda_ * I
         self._beta = np.linalg.inv(A) @ X_b.T @ y
 
-        # 5. Store coefficients
+        # store coefficients
         self.intercept_ = self._beta[0]
         self.coef_ = self._beta[1:]
 
@@ -135,15 +129,13 @@ class RidgeRegression:
         return f"RidgeRegression(lambda_={self.lambda_})"
 
 
-# ======================================================================
-# EXAMPLE USAGE
-# ======================================================================
+# example usage
 
 if __name__ == "__main__":
 
     np.random.seed(42)
 
-    # Generate synthetic dataset
+    # generate synthetic dataset
     n, p = 100, 3
 
     X = np.random.randn(n, p)
@@ -152,13 +144,13 @@ if __name__ == "__main__":
 
     y = X @ true_beta + np.random.randn(n) * 0.5
 
-    # Train-test split
+    # train-test split
     split = int(0.8 * n)
 
     X_train, X_test = X[:split], X[split:]
     y_train, y_test = y[:split], y[split:]
 
-    # Train Ridge Regression
+    # train Ridge Regression
     model = RidgeRegression(lambda_=1.0)
     model.fit(X_train, y_train)
 
@@ -168,7 +160,7 @@ if __name__ == "__main__":
     print("Test R²           :", round(model.score(X_test, y_test), 4))
     print("Test MSE          :", round(model.mse(X_test, y_test), 4))
 
-    # Effect of different lambda values
+    # effect of different lambda values
     print("\nEffect of Regularization")
     print(f"{'Lambda':>10}  {'R²':>8}  {'MSE':>10}")
     print("-" * 32)
