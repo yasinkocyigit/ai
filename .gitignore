@@ -40,6 +40,7 @@ Thumbs.db
 # ignore personel notes everywhere
 steps.txt
 adimlar.txt
+machine-learning/projects/projects_guide.md
 
 # ignore these projects entirely (only titanic and housing-prices are tracked)
 machine-learning/projects/digit-recognizer/
@@ -47,6 +48,7 @@ machine-learning/projects/llm-classification-finetuning/
 machine-learning/projects/natural-language-processing/
 machine-learning/projects/project-name/
 machine-learning/projects/spaceship-titanic/
+machine-learning/projects/store_sales/
 
 # ignore generated outputs in tracked projects (housing-prices & titanic)
 **/data/processed/
@@ -64,3 +66,8 @@ machine-learning/projects/spaceship-titanic/
 
 # ignore Kaggle submission files
 **/submissions/*.csv
+
+# Support Vector Machines
+machine-learning/training-models/support_vector_machines/notes/
+machine-learning/training-models/support_vector_machines/**/annotated_scripts/
+
